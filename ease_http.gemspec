@@ -5,13 +5,13 @@ require 'ease_http/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "ease_http"
-  spec.version       = EaseHttp::VERSION
+  spec.version       = EaseHTTP::VERSION
   spec.authors       = ["reyesyang"]
   spec.email         = ["reyes.yang@gmail.com"]
 
-  spec.summary       = %q{TODO: Write a short summary, because Rubygems requires one.}
-  spec.description   = %q{TODO: Write a longer description or delete this line.}
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.summary       = %q{A Net::HTTP wrapper for esay to use}
+  spec.description   = %q{A Net::HTTP wrapper for easy to use}
+  spec.homepage      = "https://github.com/reyesyang/ease_http"
 
   # Prevent pushing this gem to RubyGems.org by setting 'allowed_push_host', or
   # delete this section to allow pushing this gem to any host.
@@ -29,4 +29,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "bundler", "~> 1.11"
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "minitest", "~> 5.0"
+  spec.add_development_dependency "pry"
 end

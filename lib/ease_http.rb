@@ -1,5 +1,5 @@
 require "ease_http/version"
 
-module EaseHttp
+module EaseHTTP
   # Your code goes here...
 end
