@@ -8,6 +8,7 @@ Gem::Specification.new do |spec|
   spec.version       = EaseHTTP::VERSION
   spec.authors       = ["reyesyang"]
   spec.email         = ["reyes.yang@gmail.com"]
+  spec.licenses      = ['MIT']
 
   spec.summary       = %q{A Net::HTTP wrapper for esay to use}
   spec.description   = %q{A Net::HTTP wrapper for easy to use}
