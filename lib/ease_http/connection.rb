@@ -8,11 +8,11 @@ module EaseHTTP
     def initialize(endpoint, options={})
       @endpoint = endpoint
       uri = URI(endpoint)
-      # timeout = options.delete(:timeout) || 0.2
+      timeout = options.delete(:timeout) || 0.2
 
       @http = Net::HTTP.new(uri.host, uri.port)
       @http.use_ssl = uri.scheme == 'https'
-      # @http.read_timeout = timeout
+      @http.read_timeout = timeout
     end
 
     # path - path to request

@@ -22,7 +22,55 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+We have a test sinatra app located in `test/web.rb`, start as our backend server:
+
+```bash
+# Start test sinatra app
+ruby test/web.rb
+
+# Start console
+bin/console
+```
+
+### Get
+
+```ruby
+require 'json'
+conn = EaseHTTP::Connection.new('http://localhost:4567')
+
+# Get with 'query' option
+res = conn.get '/', query: { hello: 'world' }
+=> #<Net::HTTPOK 200 OK  readbody=true>
+JSON.parse res.body
+=> {"hello": "world"}
+
+```
+
+### Post
+
+```ruby
+require 'json'
+conn = EaseHTTP::Connection.new('http://localhost:4567')
+
+# Post with 'data' option as 'application/x-www-form-urlencoded'
+res = conn.post '/', data: { hello: 'world' }
+=> #<Net::HTTPCreated 201 Created  readbody=true>
+JSON.parse res.body
+=> {"hello": "world"}
+
+# Post with 'data' option as 'multipart/form-data'
+file = File.new '/etc/hosts'
+res = conn.post '/', data: { hello: 'world', file: file }
+=> #<Net::HTTPCreated 201 Created  readbody=true>
+JSON.parse res.body
+=> {"hello"=>"world",
+ "file"=>
+  {"filename"=>"hosts",
+   "type"=>"text/plain",
+   "name"=>"file",
+   "tempfile"=>"#<File:0x0055d0877a8520>",
+   "head"=>"Content-Disposition: form-data; name=\"file\"; filename=\"hosts\"\r\nContent-Type: text/plain\r\n"}}
+```
 
 ## Development
 
